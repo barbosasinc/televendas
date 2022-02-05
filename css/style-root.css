@@ -3,13 +3,27 @@
   padding:0;  
 }
 
+.header img {
+  float: left;
+  height: 7vh;
+  background: transparent;
+}
+
+.header h1 {
+  position: relative;
+  top: 18px;
+  left: 10px;
+}
+
 a {
-  color: #fff;
+  color: #a71318;
+  font-weight: bold; 
   text-decoration: none;
   transition: .3s;
 }
 
 a:hover {
+  color: #fea40c;
   opacity: 0.7;
 }
 
@@ -24,13 +38,16 @@ nav {
   justify-content: space-around;    
   align-items: center;
   font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
-  background: #23232e;
+  background: #ecf0f1;
   height: 8vh;
 }
 
 main {
-  background-color: #fff; 
-  background-size: cover;
+  background-image: url("icons/background-mix.jpeg");
+  background-color: #cccccc; 
+  background-position: center; 
+  background-repeat: no-repeat; 
+  background-size: cover; 
   height: 92vh;
 }
 
@@ -47,12 +64,13 @@ main {
 .mobile-menu {
   display: none;
   cursor: pointer;
+  color: #fea40c;
 }
 
 .mobile-menu div {
   width: 32px;
   height: 2px;
-  background: #fff;
+  background: #a71318;
   margin: 8px;
   transition: 0.3s;
 }
@@ -67,7 +85,7 @@ main {
     right: 0;
     width: 50vw;
     height: 92vh;
-    background: #23232e;
+    background: #ecf0f1;
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
