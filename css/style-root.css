@@ -9,56 +9,85 @@
   background: transparent;
 }
 
-.header h1 {
-  position: relative;
-  top: 18px;
-  left: 10px;
-}
-
-a {
-  color: #a71318;
-  font-weight: bold; 
-  text-decoration: none;
-  transition: .3s;
-}
-
-a:hover {
-  color: #fea40c;
-  opacity: 0.7;
-}
-
-.logo {
-  font-size: 24px;
-  text-transform: uppercase;
-  letter-spacing: 4px;
-}
-
-nav {
-  display: flex;
-  justify-content: space-around;    
-  align-items: center;
-  font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
-  background: #ecf0f1;
-  height: 8vh;
-}
-
 main {
-  background-image: url("icons/background-mix.jpeg");
-  background-color: #cccccc; 
+  background-color: #ecf0f1; 
   background-position: center; 
   background-repeat: no-repeat; 
   background-size: cover; 
   height: 92vh;
 }
 
-.nav-list {
-  list-style: none;
+nav {
+  background: #fff;
   display: flex;
+  justify-content: space-around;    
+  align-items: center;
+  font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+  height: 8vh;
+  margin: 0 auto;
+}
+
+nav::after {
+	display: block;
+	content: '';
+	clear: both;
+}
+
+.nav-list {
+  padding: 0;
+  margin: 0;
+  list-style: none;
 }
 
 .nav-list li {
+  position: relative;
+  float: left;
   letter-spacing: 3px;
-  margin-left: 32px;
+}
+
+.nav-list li a {
+  font-weight: bold;
+  font-size: 18px;
+  color: #a71318;
+	display: block;
+	text-decoration: none;
+	padding: 1rem 2rem;
+	border-top: 2px solid transparent;
+	border-bottom: 2px solid transparent;
+	transition: all .3s ease;
+}
+
+.nav-list li a:hover {
+	background: rgba(0, 0, 0, .15);
+}
+
+.nav-list li a:not(:only-child)::after {
+	padding-left: 2px;
+	content: ' ▾';
+}
+
+.nav-list li ul li  {
+	min-width: 210px;
+}
+
+.nav-list li ul li a {
+	background: transparent;
+	color: #555;
+	border-bottom: 1px solid #DDE0E7;
+}
+
+.nav-list li ul li a:hover,
+.nav-list li ul li a:focus {
+	background: #eee;
+	color: #a71318;
+}
+
+.nav-list li ul {
+  list-style-type: none;
+	display: none;
+	position: absolute;
+	background: #fff;
+	box-shadow: 0 4px 10px rgba(10, 20, 30, .4);
 }
 
 .mobile-menu {
@@ -93,9 +122,26 @@ main {
     transition: transform 0.1s ease-in;
   }
   .nav-list li {
+    float: left;
+    width: 150px;
     margin-left: 0;
     opacity: 0;
   }
+  ul li {
+    width: 100%;
+    float: none;
+  }
+  ul ul{
+    position: static;
+    overflow: hidden;
+    max-height: 0;
+    transition: all .4s;
+  }
+  ul li:hover ul {
+    height: auto;
+    max-height: 200px;
+  }
+
   .mobile-menu {
     display: block;
   }

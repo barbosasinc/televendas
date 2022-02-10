@@ -11,27 +11,44 @@
 
   <body>
     <header>
-      <nav>
+      <nav class="nav">
         <div class="header">
           <img src="icons/instituto-mix-solid.png" alt="logo" />
-          <h1></h1>
         </div>
-        <a class="logo" href="/"></a>
+        
         <div class="mobile-menu">
           <div class="line1"></div>
           <div class="line2"></div>
           <div class="line3"></div>
         </div>  
+        
         <ul class="nav-list">
+<<<<<<< Updated upstream
           <li><a href="#">Cursos</a></li>
           <li><a href="#">Script de venda</a></li>
           <li><a href="#">Relatórios</a></li>
           <li><a href="#">Cadastros</a></li>
+=======
+          <li><a href="#">Cursos</a>
+          <li><a href="#">Vendas</a>
+          <li class="drop-1"><a href="#">Relatórios</a>
+            <ul class="dropdown-1">
+              <li><a href="#">Vendas</a></li>
+              <li><a href="#">Clientes</a></li>
+            </ul>
+          <li class="drop-2"><a href="#">Cadastros</a>
+            <ul class="dropdown-2">
+              <li><a href="#">Usuários</a></li>
+              <li><a href="#">Clientes</a></li>
+            </ul>
+>>>>>>> Stashed changes
           <li><a href="#">Tutorial</a></li>
         </ul>
+
       </nav>
     </header>
-    <main></main>
-    <script src="js/mobile-navbar.js"></script>
+    <main></main><!-- controle de background -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script><script  src="js/jqueryDropdown.js"></script><!-- jquery para dropdown -->
+    <script src="js/mobile-navbar.js"></script><!-- animação de barra de menu -->
   </body>   
 </html>
