@@ -1,0 +1,163 @@
+<!DOCTYPE html> <!--Inicio do Código-->
+<html lang="pt-BR">
+<head><!-- informações gerais-->
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="icons/favicon.png"/>
+  <link rel="stylesheet" href="css/style-cadastro.css" />
+  <title>Cadastramento</title>
+</head>
+
+<body>
+  <div class="box">
+    <div class='card'>
+    <form action="">
+      <fieldset>
+          <h2 class="legend">Cadastro de clientes</h2>
+          <br>
+          <div class="inputBox">
+          <input type="text" name="nome" id="nome" class="inputUser" required> 
+          <label for="nome" class="labelInput">Nome Completo</label>  
+          </div>
+          <br>
+
+          <div class="inputBox">
+            <input type="text" name="email" id="email" class="inputUser" required>
+            <label for="email"class="labelInput">E-Mail</label>
+          </div>
+          <br>
+
+          <div class="inputBox">
+            <input type="tel" name="telefone" id="telefone" class="inputUser" required>
+            <label for="telefone"class="labelInput">Telefone</label>
+          </div>
+          <br>
+          
+          <p>Gênero
+          <div class="Genero">
+          <input type="radio" id="feminino" name="genero" value="feminino" class= "Genero" required>
+          <label for="feminino" class= "Genero">Feminino</label><br>
+            
+          <input type="radio" id="masculino" name="genero" value="masculino" class= "Genero" required>
+          <label for="masculino" class= "Genero">Masculino</label><br>
+
+          <input type="radio" id="outros" name="genero" value="outros" class= "Genero" required>
+          <label for="outros" class= "Genero">Outros</label>
+          </div>
+          </p> 
+          <br>
+
+          <b>
+          <div class="data_nascimento">
+            <label for="data_nascimento" class="data_nascimento">Data de Nascimento</label> <br>
+            <input type="date" id="data_nascimento" name="data_nascimento" class="data_nascimento" required>
+          </div>
+          </b>
+          <br>
+
+          <div class="inputBox">
+              <input type="text" name="cep" id="cep" class="inputUser" required>
+              <label for="cep"class="labelInput">CEP</label>
+            </div>
+            <br>
+
+            <div class="inputBox">
+              <input type="text" name="logradouro" id="logradouro" class="inputUser" required>
+              <label for="logradouro"class="labelInput">Logradouro</label>
+            </div>
+            <br>
+
+            <div class="inputBox">
+              <input type="text" name="numero" id="numero" class="inputUser" required>
+              <label for="numero"class="labelInput">Número</label>
+            </div>
+            <br>
+
+            <div class="inputBox">
+              <input type="text" name="complemento" id="complemento" class="inputUser" required>
+              <label for="complemento"class="labelInput">Complemento</label>
+            </div>
+            <br>
+
+            <div class="inputBox">
+              <input type="text" name="bairro" id="bairro" class="inputUser" required>
+              <label for="bairro"class="labelInput">Bairro</label>
+            </div>
+            <br>
+
+            <div class="inputBox">
+              <input type="text" name="cidade" id="cidade" class="inputUser" required>
+              <label for="cidade"class="labelInput">Cidade</label>
+            </div>
+            <br>
+
+          
+            <label class = "Estado" for="uf">Estado</label>
+            
+            <div class="estado">
+              <select id="uf" class=estado>
+              <option value="AC">Acre</option>
+              <option value="AL">Alagoas</option>
+              <option value="AP">Amapá</option>
+              <option value="AM">Amazonas</option>
+              <option value="BA">Bahia</option>
+              <option value="CE">Ceará</option>
+              <option value="DF">Distrito Federal</option>
+              <option value="ES">Espírito Santo</option>
+              <option value="GO">Goiás</option>
+              <option value="MA">Maranhão</option>
+              <option value="MT">Mato Grosso</option>
+              <option value="MS">Mato Grosso do Sul</option>
+              <option value="MG">Minas Gerais</option>
+              <option value="PA">Pará</option>
+              <option value="PB">Paraíba</option>
+              <option value="PR">Paraná</option>
+              <option value="PE">Pernambuco</option>
+              <option value="PI">Piauí</option>
+              <option value="RJ">Rio de Janeiro</option>
+              <option value="RN">Rio Grande do Norte</option>
+              <option value="RS">Rio Grande do Sul</option>
+              <option value="RO">Rondônia</option>
+              <option value="RR">Roraima</option>
+              <option value="SC">Santa Catarina</option>
+              <option value="SP">São Paulo</option>
+              <option value="SE">Sergipe</option>
+              <option value="TO">Tocantins</option>
+              </select>
+            </div>
+            <br>
+
+      <div class='justify-center'>
+        <Button>Enviar</button>
+      </div>  
+
+      <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+      <script type="text/javascript">
+          $("#cep").focusout(function(){
+          });
+      </script>
+      <script type="text/javascript">
+          $("#cep").focusout(function(){
+              $.ajax({
+                  url: 'https://viacep.com.br/ws/'+$(this).val()+'/json/unicode/',
+                  dataType: 'json',
+                  success: function(resposta){
+                      $("#logradouro").val(resposta.logradouro);
+                      $("#complemento").val(resposta.complemento);
+                      $("#bairro").val(resposta.bairro);
+                      $("#cidade").val(resposta.localidade);
+                      $("#uf").val(resposta.uf);
+                      $("#numero").focus();
+                  }
+              });
+          });
+      </script>
+      
+          <br>
+        </fieldset>   
+    </form>   
+    </div>  
+  </body>        
+  </html>
