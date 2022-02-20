@@ -1,0 +1,77 @@
+<!DOCTYPE html> <!--Inicio do Código-->
+<html lang="pt-BR">
+<head><!-- informações gerais-->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="icons/favicon.png"/>
+    <link rel="stylesheet" href="css/style-cadastro.css" />
+    <title>Cadastramento</title>
+
+    
+</head>
+<body>
+  <div class="boxUser">
+    <div class='card'>
+    <form action="">
+      <fieldset>
+          <h2 class="legend">Cadastro de Usuários</h2>
+          <br>
+
+          <div class="inputBox">
+            <input type="text" name="nome" id="nome" class="inputUser" required> 
+            <label for="nome" class="labelInput">Nome</label>  
+          </div>
+          <br>  
+
+          <div class="inputBox">
+            <input type="text" name="User" id="User" class="inputUser" required> 
+            <label for="User" class="labelInput">Usuário</label>  
+          </div>
+          <br>
+          
+          <div class="inputBox">
+            <input type="password" name="password" id="password" class="inputUser" required>
+            <label for="password"class="labelInput">Senha</label>
+          </div>
+          <br>
+
+          <div class="inputBox">
+            <input type="passwordConfirm" name="passwordConfirm" id="passwordConfirm" class="inputUser" required>
+            <label for="passwordConfirm"class="labelInput">Confirma senha</label>
+          </div>
+          <br>
+        
+      <div class='justify-center'>
+        <Button>Enviar</button>
+      </div>  
+
+      <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+
+      <script type="text/javascript">
+          $("#cep").focusout(function(){
+          });
+      </script>
+      <script type="text/javascript">
+          $("#cep").focusout(function(){
+              $.ajax({
+                  url: 'https://viacep.com.br/ws/'+$(this).val()+'/json/unicode/',
+                  dataType: 'json',
+                  success: function(resposta){
+                      $("#logradouro").val(resposta.logradouro);
+                      $("#complemento").val(resposta.complemento);
+                      $("#bairro").val(resposta.bairro);
+                      $("#cidade").val(resposta.localidade);
+                      $("#uf").val(resposta.uf);
+                      $("#numero").focus();
+                  }
+              });
+          });
+      </script>
+      
+          <br>
+        </fieldset>   
+    </form>   
+    </div>  
+  </body>        
+  </html>
