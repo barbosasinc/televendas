@@ -4,8 +4,8 @@
 
 class Usuaruio {
   private $pdo;
-  public $msgErro
-  public $sql
+  public $msgErro;
+  public $sql;
 
   public function conectar ($nome, $host, $usuario, $senha)
   {
@@ -13,7 +13,9 @@ class Usuaruio {
     try {
         $pdo = new PDO("mysql:dbname=".$nome. ";host=".$host,$usario,$senha);
     } catch (PDOException $e) {
+
       $msgErro = $e->getMessage();
+      echo $msgErro;
     }
 
 
@@ -34,7 +36,7 @@ class Usuaruio {
       $sql->bindValue(":n",$nome);
       $sql->bindValue(":e",$email);
       $sql->bindValue(":t",$telefone);
-      $sql->bindValue(":s",senha);
+      $sql->bindValue(":s",md5(senha));
       $sql->execute();
       return true;
     }
@@ -46,13 +48,16 @@ class Usuaruio {
 
         $sql = $pdo->prepare("SELECT id_user from usuarios WHERE email = :e AND senha = :s");
         $sql->bindValue(":e",$email);
-        $sql->bindValue(":s",$senha)
+        $sql->bindValue(":s",md5($senha))
         $sql->execute();
 
 
         if($sql->rowCount() > 0)
         {
-          return true;
+          $dado = $sql->fetch();
+          session_start();
+          $_SESSION['id_user'] = $dado['id_usr']
+            return true;
         }else{
           return false;
         }
