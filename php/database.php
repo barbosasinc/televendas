@@ -7,11 +7,14 @@ class Usuaruio {
   public $msgErro;
   public $sql;
 
-  public function conectar ($nome, $host, $usuario, $senha)
+  //public function conectar ($nome, $host, $usuario, $senha)
+  public function conectar ()
   {
     global $pdo;
     try {
-        $pdo = new PDO("mysql:dbname=".$nome. ";host=".$host,$usario,$senha);
+        //$pdo = new PDO("mysql:dbname=".$nome. ";host=".$host,$usuario,$senha);
+        $pdo = new PDO("mysql:host=localhost;dbname=callmix", 'admin','rld2022');
+
     } catch (PDOException $e) {
 
       $msgErro = $e->getMessage();
@@ -45,20 +48,26 @@ class Usuaruio {
 
   }
   public function acessar($email,$senha){
+    global $pdo;
+
 
         $sql = $pdo->prepare("SELECT id_user from usuarios WHERE email = :e AND senha = :s");
         $sql->bindValue(":e",$email);
-        $sql->bindValue(":s",md5($senha))
+        $sql->bindValue(":s",md5($senha));
+        //$sql = $pdo->prepare("SELECT id_user from usuarios WHERE email = 'teste' AND senha = '123teste'");
         $sql->execute();
+
 
 
         if($sql->rowCount() > 0)
         {
           $dado = $sql->fetch();
           session_start();
-          $_SESSION['id_user'] = $dado['id_usr']
-            return true;
+          $_SESSION['id_user'] = $dado['id_usr'];
+
+          return true;
         }else{
+
           return false;
         }
   }

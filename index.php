@@ -12,6 +12,9 @@
         integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
     <script src="http://kit.fontawesome.com/ca14b9e588.js" crossorigin="anonymous"></script>
 
+
+
+
 </head>
 <body>
 
@@ -24,18 +27,18 @@
             <div class="second-column">
                 <h2 class="title title-second">acesse com</h2>
                 <p class="description description-second">Entre com suas credênciais:</p>
-                <form method="post" action="php/login.php">
+                <form method="post" action="">
                     <label class="label-input" for="">
                         <i class="far fa-user icon-modify"></i>
-                        <input type="text" placeholder="  Usuário" id="usr">
+                        <input type="text" placeholder="  Usuário" name="usr">
                     </label>
 
                     <label class="label-input" for="">
                         <i class="fas fa-lock icon-modify"></i>
-                        <input type="password" placeholder="  Senha" id="pass">
+                        <input type="password" placeholder="  Senha" name="pass">
                     </label>
 
-                    <button class="btn btn-second">login</button>
+                    <button class="btn btn-second" type="submit">login</button>
 
                 </form>
             </div><!-- second column -->
@@ -72,6 +75,26 @@
             </div><!-- second column -->
         </div><!-- second-content -->
     </div>
+
+    <?php
+      require_once( 'php/database.php' );
+      $usuario = new Usuaruio();
+      $usuario->conectar();
+
+          if ( $usuario->acessar($_POST['usr'], $_POST['pass'])  )
+          {
+            header('Location: root.html');
+            //exit;
+          }else {
+              //header('Location: ../index.html');
+              echo "Usuário e senha inválido";
+              //exit;
+
+          }
+
+
+
+    ?>
 
     <!--script src="js/app.js"></script-->
     <!--script src="js/database.js"></script-->
