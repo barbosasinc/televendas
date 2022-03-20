@@ -27,20 +27,28 @@
             <div class="second-column">
                 <h2 class="title title-second">acesse com</h2>
                 <p class="description description-second">Entre com suas credênciais:</p>
-                <form method="post" action="">
+                <form>
+                  <label class="label-input" for="">
+                      <i class="far fa-home icon-modify"></i>
+                      <select  name="emp_usr" id="emp_name">
+                        <option value="teste">teste</option>
+                        <option value="callmix" >CallMix</option>
+                      </select>
+                  </label>
                     <label class="label-input" for="">
                         <i class="far fa-user icon-modify"></i>
-                        <input type="text" placeholder="  Usuário" name="usr">
+                        <input type="text" placeholder="  Usuário" name="usr" id="usr">
                     </label>
 
                     <label class="label-input" for="">
                         <i class="fas fa-lock icon-modify"></i>
-                        <input type="password" placeholder="  Senha" name="pass">
+                        <input type="password" placeholder="  Senha" name="pass" id="pass">
                     </label>
 
-                    <button class="btn btn-second" type="submit">login</button>
+                    <!--button class="btn btn-second">login</button-->
 
                 </form>
+                <button class="btn btn-second" id="logBtn">login</button>
             </div><!-- second column -->
         </div><!-- first content -->
         <div class="content second-content">
@@ -76,27 +84,8 @@
         </div><!-- second-content -->
     </div>
 
-    <?php
-      require_once( 'php/database.php' );
-      $usuario = new Usuaruio();
-      $usuario->conectar();
 
-          if ( $usuario->acessar($_POST['usr'], $_POST['pass'])  )
-          {
-            header('Location: root.html');
-            //exit;
-          }else {
-              //header('Location: ../index.html');
-              echo "Usuário e senha inválido";
-              //exit;
-
-          }
-
-
-
-    ?>
-
-    <!--script src="js/app.js"></script-->
+    <script src="js/app.js"></script>
     <!--script src="js/database.js"></script-->
 
 </body>

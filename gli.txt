@@ -1,6 +1,6 @@
 Site address
     http://34.176.30.109/
-    34.176.30.109 
+    34.176.30.109
 Admin URL
     http://34.176.30.109/phpmyadmin
 
@@ -8,6 +8,7 @@ MySQL user
     root
 MySQL password (Temporary)
     FczXfDoUmVmMj2
+    rld@2922
 Instance
     lamp-1-vm
 Instance zone

@@ -7,13 +7,12 @@ class Usuaruio {
   public $msgErro;
   public $sql;
 
-  //public function conectar ($nome, $host, $usuario, $senha)
-  public function conectar ()
+  public function conectar ($nome, $host, $usuario, $senha)
   {
     global $pdo;
     try {
-        //$pdo = new PDO("mysql:dbname=".$nome. ";host=".$host,$usuario,$senha);
-        $pdo = new PDO("mysql:host=localhost;dbname=callmix", 'admin','rld2022');
+        $pdo = new PDO("mysql:dbname=".$nome. ";host=".$host,$usuario,$senha);
+        //$pdo = new PDO("mysql:host=localhost;dbname=callmix", 'admin','rld2022');
 
     } catch (PDOException $e) {
 
