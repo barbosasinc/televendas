@@ -1,6 +1,9 @@
+var drop = $(".drop-1");
 $(".drop-1")
   .mouseover(function() {
-  $(".dropdown-1").show(300);
+    if (!this.mouseout()){
+      $(".dropdown-1").show(300);
+    }
 });
 $(".drop-1")
   .mouseleave(function() {

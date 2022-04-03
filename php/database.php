@@ -70,5 +70,51 @@ class Usuaruio {
           return false;
         }
   }
+  
+}
+
+class Perguntas{
+  private $pdo;
+  public $msgErro;
+  public $sql;
+
+  public function conectar ($nome, $host, $usuario, $senha)
+  {
+    global $pdo;
+    try {
+        $pdo = new PDO("mysql:dbname=".$nome. ";host=".$host,$usuario,$senha);
+        //$pdo = new PDO("mysql:host=localhost;dbname=callmix", 'admin','rld2022');
+
+    } catch (PDOException $e) {
+
+      $msgErro = $e->getMessage();
+      echo $msgErro;
+    }
+
+
+
+  }  
+
+  public function pergunta($id){
+    global $pdo;
+
+
+        $sql = $pdo->prepare("SELECT texto from perguntas WHERE id = :e");
+        $sql->bindValue(":e",$id);
+        
+        //$sql = $pdo->prepare("SELECT id_user from usuarios WHERE email = 'teste' AND senha = '123teste'");
+        $sql->execute();
+
+
+
+        if($sql->rowCount() > 0)
+        {
+          
+          return texto;
+        }else{
+
+          return "";
+        }
+  }
 }
 ?>
