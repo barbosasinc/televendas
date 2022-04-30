@@ -99,7 +99,7 @@ class Perguntas{
     global $pdo;
 
 
-        $sql = $pdo->prepare("SELECT texto from perguntas WHERE id = :e");
+        $sql = $pdo->prepare("SELECT Pergunta from perguntas WHERE id = :e");
         $sql->bindValue(":e",$id);
         
         //$sql = $pdo->prepare("SELECT id_user from usuarios WHERE email = 'teste' AND senha = '123teste'");
@@ -110,7 +110,7 @@ class Perguntas{
         if($sql->rowCount() > 0)
         {
           
-          return texto;
+         echo json_encode ($row["Perguntas"]);
         }else{
 
           return "";
