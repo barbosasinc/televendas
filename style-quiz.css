@@ -8,11 +8,11 @@
 }
 
 body{
-    background: #007bff;
+    background: #ecf0f1;
 }
 
 ::selection{
-    color: #fff;
+    color: #ecf0f1;
     background: #007bff;
 }
 
@@ -40,18 +40,18 @@ body{
 .start_btn button{
     font-size: 25px;
     font-weight: 500;
-    color: #007bff;
+    color: #000000;
     padding: 15px 30px;
     outline: none;
     border: none;
     border-radius: 5px;
-    background: #fff;
+    background: #ecf0f1;
     cursor: pointer;
 }
 
 .info_box{
     width: 540px;
-    background: #fff;
+    background: #ecf0f1;
     border-radius: 5px;
     transform: translate(-50%, -50%) scale(0.9);
     opacity: 0;
@@ -109,7 +109,7 @@ body{
 
 .quiz_box{
     width: 550px;
-    background: #fff;
+    background: #ecf0f1;
     border-radius: 5px;
     transform: translate(-50%, -50%) scale(0.9);
     opacity: 0;
@@ -118,11 +118,12 @@ body{
 }
 
 .quiz_box header{
+    text-align: center;
     position: relative;
     z-index: 2;
     height: 70px;
     padding: 0 30px;
-    background: #fff;
+    background: #ecf0f1;
     border-radius: 5px 5px 0 0;
     display: flex;
     align-items: center;
@@ -135,18 +136,7 @@ body{
     font-weight: 600;
 }
 
-.quiz_box header .timer{
-    color: #004085;
-    background: #cce5ff;
-    border: 1px solid #b8daff;
-    height: 45px;
-    padding: 0 8px;
-    border-radius: 5px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 145px;
-}
+
 
 .quiz_box header .timer .time_left_txt{
     font-weight: 400;
@@ -159,7 +149,7 @@ body{
     font-weight: 500;
     height: 30px;
     width: 45px;
-    color: #fff;
+    color: #ecf0f1;
     border-radius: 5px;
     line-height: 30px;
     text-align: center;
@@ -178,7 +168,7 @@ body{
 
 section{
     padding: 25px 30px 20px 30px;
-    background: #fff;
+    background: #ecf0f1;
 }
 
 section .que_text{
@@ -285,7 +275,7 @@ footer button{
     cursor: pointer;
     border: none;
     outline: none;
-    color: #fff;
+    color: #ecf0f1;
     border-radius: 5px;
     background: #007bff;
     border: 1px solid #007bff;
@@ -307,7 +297,7 @@ footer button.show{
 }
 
 .result_box{
-    background: #fff;
+    background: #ecf0f1;
     border-radius: 5px;
     display: flex;
     padding: 25px 30px;
@@ -364,7 +354,7 @@ footer button.show{
 }
 
 .buttons button.restart{
-    color: #fff;
+    color: #ecf0f1;
     background: #007bff;
 }
 
@@ -374,10 +364,10 @@ footer button.show{
 
 .buttons button.quit{
     color: #007bff;
-    background: #fff;
+    background: #ecf0f1;
 }
 
 .buttons button.quit:hover{
-    color: #fff;
+    color: #ecf0f1;
     background: #007bff;
 }

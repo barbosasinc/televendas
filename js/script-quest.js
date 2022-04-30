@@ -12,7 +12,7 @@ const timeCount = document.querySelector(".timer .timer_sec");
 
 const carrega_perg = function(){
 
-fetch("http://localhost/php/perg_vs_resp.php", {method:"POST", body:data} ).then(function(e) {
+fetch("php\perg_vs_resp.php", {method:"POST" } ).then(function(e) {
     console.log ("teste")
  }
 )
@@ -61,7 +61,9 @@ const bottom_ques_counter = document.querySelector("footer .total_que");
 // getting questions and options from array
 function showQuetions(index){
     const que_text = document.querySelector(".que_text");
+    carrega_perg();
 
+    
     //creating a new span and div tag for question and option and passing the value using array index
     let que_tag = '<span>'+ questions[index].numb + ". " + questions[index].question +'</span>';
     let option_tag = '<div class="option"><span>'+ questions[index].options[0] +'</span></div>'
@@ -95,7 +97,7 @@ function optionSelected(answer){
             queCounter(que_numb); //passing que_numb value to queCounter
             clearInterval(counter); //clear counter
             clearInterval(counterLine); //clear counterLine
-            startTimerLine(widthValue); //calling startTimerLine function
+         //   startTimerLine(widthValue); //calling startTimerLine function
             next_btn.classList.remove("show"); //hide the next button
         }
         else{
