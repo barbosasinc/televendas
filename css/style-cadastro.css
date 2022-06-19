@@ -1,84 +1,95 @@
 body{
+    display: flex;
     font-family: Arial, Helvetica, sans-serif;
     background-color: #ecf0f1;
-    height: 100%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-    
+    flex-direction: column;
+    gap: .4rem;
   }
 
-  .card { 
+header{
+  display: flex;
+  flex: 1;
+  font-size: 2rem;
+  border: solid 1px;
+  justify-content: center;
+  color: #fff;
+  padding: 10px;
+  text-align: center;
+  background-color: #a71318;
+}
+
+  .card {
+    display: flex;
     background-color: #a71318;
     box-shadow: 3px 3px 1px 0px #00000060;
-    position: absolute;
-    top:  50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
     padding: 15px;
-    width: fit-content;
     border-radius: 8px;
     box-sizing: border-box;
+    flex: 1;
+    gap: 1rem;
   }
-  
+
   .box{
     display: flex;
-    position: absolute;
-    top:  50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    padding: 15px;
-    width: 50%;
-    border-radius: 8px;
+    flex:1;
+
   }
 
   .boxUser {
     display: flex;
-    position: absolute;
     bottom:  50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+
     padding: 15px;
     width: 50%;
     border-radius: 8px;
+    flex-direction: column;
+
+
   }
 
-  /*fieldset{
-    color: #fff;
-    border:none;
-  }*/   
 
-  .legend{
-    background-color: transparent;
-    color: #fff;
-    padding: 10px;
-    text-align: center;
-    border-radius: 8px;
-  }
 
   .inputBox{
-    position: relative;
-  }
-
-  .inputUser{
+    display: flex;
     background: none;
     border: none;
-    border-bottom: 2px solid #7f8c8d;
+  /*  border-bottom: 2px solid #7f8c8d;*/
     outline: none;
     color: black;
     font-size: 16px;
-    width: 100%;
+    flex:1;
     letter-spacing: 2px;
+    flex-wrap: wrap;
+    gap: 2rem;
+
+
   }
 
-  .labelInput{
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    color:#fff;
-    pointer-events: none;
-    transition: .5s;
+input{
+  background: none;
+  border: none;
+  border-bottom: 2px solid #7f8c8d;
+  outline: none;
+  color: black;
+  font-size: 16px;
+  letter-spacing: 2px;
+
+}
+  .inputUser{
+
+    width: 100%;
   }
+
+  label {
+    color:#fff;
+    transition: .5s;
+    border:none;
+
+  }
+
+
+
 
   .inputUser:focus ~ .labelInput,
   .inputUser:valid ~ .labelInput{
@@ -86,7 +97,7 @@ body{
     font-size: 10px;
     color: #fff;
     transition: all .3s ease-out
-  }            
+  }
 
   .data_nascimento{
     border-bottom: 2px solid #fff;
@@ -118,8 +129,9 @@ body{
     border: 1px solid #fff;
     transition: background-color .5s;
     background-color: transparent;
-    outline: none;  
+    outline: none;
     margin-bottom: 2px;
+    font-size: 16px;
   }
 
   button:hover{
@@ -129,7 +141,7 @@ body{
   }
 
   p{
-    color: #fff;   
+    color: #fff;
     font-size: 16px;
     margin-top: 2px;
     margin-bottom: 2px;
@@ -143,12 +155,14 @@ body{
   }
 
   .Genero {
-    color: #fff;   
+    display: flex;
+    color: #fff;
     padding: 2px;
-    font-size: 16px;
-    margin-top: 2px;
-    margin-bottom: 2px;
-    border-radius: 4px;
+    border:none;
+    flex-direction: row;
+    flex:1;
+
+
   }
 
   .Estado {
@@ -156,15 +170,22 @@ body{
   }
 
   .estado{
+    display: flex;
+    width: 100%;
+
     background-color: transparent;
     border-color: #fff;
     color: #fff;
     padding: 2px;
-    font-size: 12px;
     border-radius: 4px;
     cursor: pointer;
-    outline: none;  
+    outline: none;
+    flex-direction: column;
   }
   .estado:hover{
     color: black;
-  }  
+  }
+select {
+  width: 30%;
+  font-size: 16px;
+}
